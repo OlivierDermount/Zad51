@@ -92,7 +92,7 @@ namespace StudentsDiary
                 PolishLang = tbPolishLang.Text,
                 Technology = tbTechnology.Text,
                 ZajDodatkowe = chboxZajDodatkowe.Checked          //pkt.1.Zadania
-            };
+            };  
             students.Add(student);
         }
 
