@@ -1,6 +1,6 @@
 # Zadanie51
 Rozwiązanie zadania z dynamicznym
-tworzeniem list Items dla ComboBox'ów
+tworzeniem list Items dla ComboBox'ów.
 Listy Items tworzy się po przez wypełnienie
 BomboBox,a Klasa podczas dodawania uczniów 
 z okna Edycji danych ucznia lub z okna
