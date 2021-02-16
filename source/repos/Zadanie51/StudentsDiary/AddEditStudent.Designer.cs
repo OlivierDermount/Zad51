@@ -273,6 +273,7 @@
             this.cmbKlasa.Location = new System.Drawing.Point(150, 69);
             this.cmbKlasa.Name = "cmbKlasa";
             this.cmbKlasa.Size = new System.Drawing.Size(272, 28);
+            this.cmbKlasa.Sorted = true;
             this.cmbKlasa.TabIndex = 23;
             // 
             // studentBindingSource

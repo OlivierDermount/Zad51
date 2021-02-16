@@ -34,8 +34,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvDiary = new System.Windows.Forms.DataGridView();
-            this.studentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cmbGrupa = new System.Windows.Forms.ComboBox();
+            this.studentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.addEditStudentBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -117,18 +117,17 @@
             this.dgvDiary.Size = new System.Drawing.Size(1202, 829);
             this.dgvDiary.TabIndex = 4;
             // 
-            // studentBindingSource1
-            // 
-            this.studentBindingSource1.DataSource = typeof(StudentsDiary.Student);
-            // 
             // cmbGrupa
             // 
-            this.cmbGrupa.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cmbGrupa.FormattingEnabled = true;
             this.cmbGrupa.Location = new System.Drawing.Point(609, 25);
             this.cmbGrupa.Name = "cmbGrupa";
             this.cmbGrupa.Size = new System.Drawing.Size(246, 28);
+            this.cmbGrupa.Sorted = true;
             this.cmbGrupa.TabIndex = 5;
+            // 
+            // studentBindingSource1
+            // 
+            this.studentBindingSource1.DataSource = typeof(StudentsDiary.Student);
             // 
             // studentBindingSource
             // 

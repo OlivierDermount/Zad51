@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
+
 namespace StudentsDiary
 {
     public partial class Main : Form
     {
         private FileHelper<List<Student>> _fileHelper = 
             new FileHelper<List<Student>>(Program.FilePath);
-        
+       
+
         public bool IsMaximize 
         { 
             get
@@ -39,19 +41,24 @@ namespace StudentsDiary
         {
             var students = _fileHelper.DeserializeFromFile();
             //dgvDiary.DataSource = students;
-            var cmbGrupaSelectedItem = (string)cmbGrupa.SelectedItem;
+            
+            var itemsKlasa = students.Select(x => x.Klasa).Distinct().ToList();  //pkt2.zadania początek
+            
+            cmbGrupa.Items.Clear();
+            foreach (var item in itemsKlasa)
+            {
+                cmbGrupa.Items.Add(item);
+             }
+            cmbGrupa.Items.Add("Wszyscy");
+                                                                               // pkt.2. zadania koniec
 
-            var itemsKlasa = students.Select(x => x.Klasa).Distinct().ToList(); //pkt2.zadania początek
-            itemsKlasa.Add("Wszyscy");                                        
-                                                                                
-            cmbGrupa.DataSource = itemsKlasa;                                   
-            cmbGrupa.DisplayMember = "Klasa";
-                                                                                // pkt.2. zadania koniec
-            if (cmbGrupaSelectedItem == "Wszyscy")                              // pkt.3  zadania początek
-                dgvDiary.DataSource = students;                                
-            else                                                               
-                dgvDiary.DataSource = students.Where(x => x.Klasa               
-                    == cmbGrupaSelectedItem).ToList();                          // pkt.3 zadania koniec
+            var cmbGrupaSelectedItem = cmbGrupa.Text;
+
+            if (cmbGrupaSelectedItem == "Wszyscy")
+                dgvDiary.DataSource = students;
+            else
+                dgvDiary.DataSource = students.Where(x => x.Klasa
+                == cmbGrupaSelectedItem).ToList();                              // pkt.3 zadania koniec
         }
 
         private void SetColumnsHeader()
@@ -138,7 +145,6 @@ namespace StudentsDiary
                 IsMaximize = false;
 
             Settings.Default.Save();
-        }
-                
+        }      
     }
 }
